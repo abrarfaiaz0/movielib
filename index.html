@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <title>MovieLib</title>
 </head>
 <body>
@@ -19,19 +20,41 @@
                <div class="card">
                 <div class="title">asd</div>
                 <div class="year">asd</div>
-                <div class="time">asd</div>
+                <div class="mlength">asd</div>
                 <div class="director">asd</div>
                 <div class="watched">asd</div>
+                <div></div>
                </div>
-               <div class="card">
-                <div class="title">asd</div>
-                <div class="year">asd</div>
-                <div class="time">asd</div>
-                <div class="director">asd</div>
-                <div class="watched">asd</div>
-               </div>
+               
            </div>
         </div>
+        <form class="add-modal" id="form">
+            <div class="modal">
+                <div class="form">
+                    <label for="title">Title</label>
+                    <input type="text" name="title" id="title">
+                </div>
+                <div class="form">
+                    <label for="year">Year</label>
+                    <input type="text" name="year" id="year">
+                </div>
+                <div class="form">
+                    <label for="mlength">Length</label>
+                    <input type="text" name="mlength" id="mlength">
+                </div>
+                <div class="form">
+                    <label for="director">Director</label>
+                    <input type="text" name="director" id="director">
+                </div>
+                <div class="form">
+                    <label for="watched">Watched?</label>
+                    <input type="checkbox" name="watched" id="watched">
+                </div>
+                <div>
+                    <input type="submit" value="Add">
+                </div>
+            </div>
+       </form>
         <div class="footer"><strong>Copyright @abrarfaiazatuno</strong></div>
     </div>
 </body>

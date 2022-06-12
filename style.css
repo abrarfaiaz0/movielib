@@ -4,6 +4,7 @@
     justify-content: center;
     justify-content: space-between;
     height: 100vh;
+    position: relative;
 }
 .nav{
     flex-grow: 4;
@@ -54,4 +55,36 @@ h3{
     margin: 15px;
     min-height: 60px;
     align-items: center;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+.invis{
+    display: none;
+}
+.add-modal{
+    background-color: coral;
+    min-height: 40vh;
+    min-width: 40vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 40px;
+}
+.modal{
+    font-size: 30px;
+    min-height: 40vh;
+    min-width: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+input{
+    height: 20px;
+    width: 200px
 }
