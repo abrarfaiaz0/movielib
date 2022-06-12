@@ -1,14 +1,30 @@
 var movieCount = 0;
+var modal  = document.getElementById("form");
 
 let add = document.getElementById("add");
-add.onclick = function(){toggleAddModal();}
+add.onclick = function(){toggleModal();}
 
 
-function toggleAddModal(){
-    modal  = document.getElementById("form");
+function addModal(){
+    let body = document.getElementById("body");
+    toggleModal();
+    body.onclick = function() {toggleModal()};
+}
+
+function isModalActive(){
     if(modal.classList.contains("invis"))
-    modal.classList.remove("invis");
-    else modal.classList.add("invis");
+    return false;
+    else return true;
+}
+
+function toggleModal(){
+    if(isModalActive())
+    {
+        modal.classList.add("invis");
+    }
+    else {
+        modal.classList.remove("invis");
+    }
 }
 
 
@@ -52,7 +68,7 @@ function addMovie(event){
     newMovie = new Movie (title,year,mlength,director,watched);
     movies.push(newMovie);
     printLib();
-    toggleAddModal();
+    toggleModal();
     movieCount++;
     addMoviesToLib();
 }
@@ -66,8 +82,10 @@ function printLib(){
 
 function addMoviesToLib(){
     let i = movieCount;
+
     for(;i<movies.length;i++)
     {
+        if(movies[i].title == "") return;
         let cardContainer = document.getElementById("card-container");
         let div1 = document.createElement("div");
         div1.classList.add("card");
