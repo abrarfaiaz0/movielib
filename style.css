@@ -1,4 +1,55 @@
+@font-face {
+  font-family: cadillac;
+  src: url(src/cadillac.ttf);
+}
+
 body {
   margin: 0;
-  background-color: aqua;
+  color: rgb(255, 242, 218);
+  background-color: rgb(87, 87, 87);
+  gap: 30px;
+}
+header {
+  margin-top: 4%;
+  font-family: cadillac;
+  font-size: 450%;
+}
+header,
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer {
+  margin-bottom: 1%;
+}
+#add {
+  color: rgb(235, 235, 235);
+  font-size: 100%;
+  font-weight: bold;
+  background-color: rgb(122, 94, 0);
+  cursor: pointer;
+  border: none;
+  /* border-radius: 60%; */
+  padding: 1%;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+.main {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  justify-content: center;
+  gap: 1%;
+}
+.card {
+  height: 30vh;
+  width: 18vw;
+  background-color: white;
+  border: 2px solid red;
+}
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
