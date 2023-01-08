@@ -1,111 +1,60 @@
-var movieCount = 0;
-var modal  = document.getElementById("form");
-
-let add = document.getElementById("add");
-add.onclick = function(){toggleModal();}
-
-
-function addModal(){
-    let body = document.getElementById("body");
-    toggleModal();
-    body.onclick = function() {toggleModal()};
-}
-
-function isModalActive(){
-    if(modal.classList.contains("invis"))
-    return false;
-    else return true;
-}
-
-function toggleModal(){
-    if(isModalActive())
-    {
-        modal.classList.add("invis");
-    }
-    else {
-        modal.classList.remove("invis");
-    }
-}
-
-
-let movies = [
-{
-    title : "Mulholland Drive",
-    year : 2001,
-    mlength : "2h 27m",
-    director : "David Lynch",
-    watched : true
-}
-]
+var movies = [];
+var ind = 69;
 class Movie {
-    constructor(title, year, mlength, director, watched) {
-        this.title = title;
-        this.year = year;
-        this.mlength = mlength;
-        this.director = director;
-        this.watched = watched;
-    }
+  constructor(title, director, year, watched) {
+    this.title = title;
+    this.director = director;
+    this.year = year;
+    this.watched = watched;
+  }
+  index;
+  info() {
+    console.log(
+      "Movie name - " +
+        this.title +
+        ", Directed by " +
+        this.director +
+        ", released in " +
+        this.year +
+        ", watched : " +
+        this.watched +
+        ", index -" +
+        this.i
+    );
+  }
+  changeWatchStatus() {
+    if (this.watched == true) {
+      this.watched = false;
+    } else this.watched = true;
+  }
 }
 
+const shamble = new Movie("shamble", "alexandar", "2022", true);
+calculateIndex(shamble);
+movies.push(shamble);
 
+const target = document.getElementById("");
 
-let form = document.getElementById("form");
-form.addEventListener("submit", addMovie);
-
-
-function addMovie(event){
-    
-    event.preventDefault();
-    let title = form.elements[0].value;
-    let year = form.elements[1].value;
-    let mlength = form.elements[2].value;
-    let director = form.elements[3].value;
-    if(form.elements[4].checked==true)
-    {watched = true;}
-    else watched = false;
-
-
-    newMovie = new Movie (title,year,mlength,director,watched);
-    movies.push(newMovie);
-    printLib();
-    toggleModal();
-    movieCount++;
-    addMoviesToLib();
+function addMovie() {
+  let title = "x";
+  let director = "y";
+  let year = "z";
+  let watched = true;
+  let newMovie = new Movie(title, director, year, watched);
+  calculateIndex(newMovie);
+  movies.push(newMovie);
 }
 
-
-function printLib(){
-    
-    for(i=0;i<movies.length;i++)
-    console.log(movies[i]);
+function calculateIndex(ob) {
+  ob.index = movies.length;
 }
 
-function addMoviesToLib(){
-    let i = movieCount;
-
-    for(;i<movies.length;i++)
-    {
-        if(movies[i].title == "") return;
-        let cardContainer = document.getElementById("card-container");
-        let div1 = document.createElement("div");
-        div1.classList.add("card");
-        div1.classList.add("also");
-        let div2 = document.createElement("div");
-        let div3 = document.createElement("div");
-        let div4 = document.createElement("div");
-        let div5 = document.createElement("div");
-        let div6 = document.createElement("div");
-        div2.innerHTML = movies[i].title;
-        div3.innerHTML = movies[i].year;
-        div4.innerHTML = movies[i].mlength;
-        div5.innerHTML = movies[i].director;
-        div6.innerHTML = movies[i].watched;
-        div1.appendChild(div2);
-        div1.appendChild(div3);
-        div1.appendChild(div4);
-        div1.appendChild(div5);
-        div1.appendChild(div6);
-        cardContainer.appendChild(div1);
-    }
+function renderAllMovies() {
+  movies.forEach((e) => {
+    const n = document.createElement("div");
+    console.log(e);
+  });
 }
 
+addMovie();
+renderAllMovies();
