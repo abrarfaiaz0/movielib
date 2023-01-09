@@ -65,9 +65,10 @@ header,
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("src/gradient.png");
+  background-image: linear-gradient(to right, #f9f645, #f72edf);
 }
 #form1 {
+  color: black;
   height: 80%;
   width: 50%;
   display: flex;
@@ -78,4 +79,13 @@ header,
 }
 #submit-form1 {
   margin-top: auto;
+  background-color: rgb(255, 199, 199);
+  cursor: pointer;
+}
+#submit-form1:hover {
+  background-color: red;
+  cursor: pointer;
+}
+.invis {
+  display: none;
 }
