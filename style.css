@@ -43,11 +43,11 @@ header,
   display: grid;
   grid-template-columns: auto auto auto auto;
   justify-content: center;
-  gap: 2%;
 }
 .card {
   height: 42vh;
   width: 18vw;
+  color: black;
   background-color: white;
   border: 5px solid rgb(77, 77, 77);
 }

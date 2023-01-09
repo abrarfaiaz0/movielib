@@ -12,18 +12,18 @@
     <header>Your Personal Library for Movies!</header>
 
     <button id="add">+ Add Movies</button>
-    <div class="main">
-      <div class="add-form">
+    <div class="main" id="main">
+      <div class="add-form invis" id="add-form">
         <form action="#" id="form1">
           <label for="title">Title:</label><br />
-          <input type="text" name="firstName" value="" /><br />
+          <input type="text" id="title" name="title" value="" /><br />
           <label for="director">Director:</label><br />
-          <input type="text" name="lastName" value="" /><br />
+          <input type="text" id="director" name="director" value="" /><br />
           <label for="year">Year:</label><br />
-          <input type="number" name="phone" value="" /><br />
+          <input type="number" id="year" name="year" value="" /><br />
           <div>
-            <input type="checkbox" id="watched" name="watched" value="HTML" />
-              <label for="html">Watched?</label><br />
+            <input type="checkbox" id="watched" name="watched" />
+              <label for="watched">Watched?</label>
           </div>
           <input type="submit" value="Add" id="submit-form1" />
         </form>
