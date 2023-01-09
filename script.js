@@ -56,5 +56,10 @@ function renderAllMovies() {
   });
 }
 
+const addButton = document.getElementById("add");
+addButton.addEventListener("click", clickAddMovie);
+
+function clickAddMovie() {}
+
 addMovie();
 renderAllMovies();

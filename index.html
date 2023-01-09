@@ -4,15 +4,31 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>MovieLib</title>
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="body">
     <header>Your Personal Library for Movies!</header>
 
-    <button id="add">Add</button>
+    <button id="add">+ Add Movies</button>
     <div class="main">
+      <div class="add-form">
+        <form action="#" id="form1">
+          <label for="title">Title:</label><br />
+          <input type="text" name="firstName" value="" /><br />
+          <label for="director">Director:</label><br />
+          <input type="text" name="lastName" value="" /><br />
+          <label for="year">Year:</label><br />
+          <input type="number" name="phone" value="" /><br />
+          <div>
+            <input type="checkbox" id="watched" name="watched" value="HTML" />
+              <label for="html">Watched?</label><br />
+          </div>
+          <input type="submit" value="Submit" id="submit-form1" />
+        </form>
+      </div>
+      <!-- <div class="card"></div>
       <div class="card"></div>
       <div class="card"></div>
       <div class="card"></div>
@@ -24,9 +40,8 @@
       <div class="card"></div>
       <div class="card"></div>
       <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
+      <div class="card"></div> -->
     </div>
-    <footer>Created by @abrarfaiaz0</footer>
+    <div class="footer">Created by @abrarfaiaz0</div>
   </body>
 </html>
