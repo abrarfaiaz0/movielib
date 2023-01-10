@@ -10,6 +10,13 @@ addSubmit.addEventListener("click", function (e) {
   addMovie();
 });
 
+const footer = document.getElementById("footer");
+footer.addEventListener("click", gotoGithub);
+
+function gotoGithub() {
+  window.open("https://www.github.com/abrarfaiaz0");
+}
+
 class Movie {
   constructor(title, director, year, watched) {
     this.title = title;

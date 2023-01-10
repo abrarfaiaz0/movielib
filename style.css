@@ -20,8 +20,13 @@ header,
   justify-self: flex-end;
 }
 .footer {
+  font-weight: bolder;
   margin-top: auto;
   margin-bottom: 1%;
+}
+.footer:hover {
+  color: black;
+  cursor: pointer;
 }
 #add {
   color: rgb(92, 92, 92);
@@ -49,8 +54,8 @@ header,
   height: 42vh;
   width: 18vw;
   color: black;
-  background-color: rgb(255, 195, 195);
-  border: 5px solid rgb(228, 228, 228);
+  background-color: rgb(160, 157, 111);
+  border: 5px solid rgb(255, 255, 255);
   display: flex;
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -102,27 +107,38 @@ header,
   display: none;
 }
 .title {
-  color: red;
+  color: gold;
+  filter: drop-shadow(1px 1px 0.5rem black);
   font-weight: bold;
-  font-size: 5rem;
+  font-size: 3rem;
+  margin-top: 10%;
 }
 .director {
   color: black;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 .year {
   color: black;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 .watch-button {
+  background: none;
+  background-color: beige;
+  border: none;
   font-size: 75%;
   margin-top: auto;
   height: 10%;
   width: 30%;
+  cursor: pointer;
+  margin-bottom: 4%;
+}
+.watch-button:hover {
+  background-color: rgb(255, 255, 237);
+  filter: drop-shadow(-2px 2px 0.2rem black);
 }
 .watched {
-  font-size: 1.7rem;
+  font-size: 1.2rem;
 }
 .delete {
   width: 4rem;
