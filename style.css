@@ -93,8 +93,7 @@ header,
   display: flex;
   flex-direction: column;
 }
-#form1 > * {
-}
+
 #submit-form1 {
   margin-top: auto;
   background-color: rgb(199, 225, 255);
