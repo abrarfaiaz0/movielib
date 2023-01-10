@@ -76,7 +76,7 @@ header,
 .add-form {
   position: absolute;
   top: 30%;
-  z-index: 5;
+  z-index: 7;
   height: 50%;
   width: 80%;
   justify-self: center;
