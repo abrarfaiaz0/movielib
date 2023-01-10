@@ -12,6 +12,7 @@ body {
 header {
   margin-top: 2%;
   font-family: cadillac;
+  filter: drop-shadow(5px 5px 0.8rem #f2ff35);
   font-size: 450%;
 }
 header,
@@ -48,8 +49,18 @@ header,
   height: 42vh;
   width: 18vw;
   color: black;
-  background-color: white;
-  border: 5px solid rgb(77, 77, 77);
+  background-color: rgb(255, 195, 195);
+  border: 5px solid rgb(228, 228, 228);
+  display: flex;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  flex-direction: column;
+  align-items: center;
+}
+.card > * {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 .body {
   display: flex;
@@ -59,12 +70,14 @@ header,
 }
 .add-form {
   position: absolute;
+  top: 30%;
   height: 50%;
-  width: 100%;
+  width: 80%;
   justify-self: center;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: bold;
   background-image: linear-gradient(to right, #f9f645, #f72edf);
 }
 #form1 {
@@ -75,17 +88,54 @@ header,
   flex-direction: column;
 }
 #form1 > * {
-  font-size: 1.2rem;
 }
 #submit-form1 {
   margin-top: auto;
-  background-color: rgb(255, 199, 199);
+  background-color: rgb(199, 225, 255);
   cursor: pointer;
 }
 #submit-form1:hover {
-  background-color: red;
+  background-color: rgb(220, 218, 255);
   cursor: pointer;
 }
 .invis {
   display: none;
+}
+.title {
+  color: red;
+  font-weight: bold;
+  font-size: 5rem;
+}
+.director {
+  color: black;
+  font-size: 3rem;
+}
+.year {
+  color: black;
+  font-size: 3rem;
+  font-weight: bold;
+}
+.watch-button {
+  font-size: 75%;
+  margin-top: auto;
+  height: 10%;
+  width: 30%;
+}
+.watched {
+  font-size: 1.7rem;
+}
+.delete {
+  width: 4rem;
+  height: 4rem;
+  background: none;
+  background-image: url(src/x.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 3rem;
+  margin-bottom: 5%;
+  border: none;
+  cursor: pointer;
+}
+.delete:hover {
+  filter: drop-shadow(0 0 0.4rem rgb(170, 0, 34));
 }

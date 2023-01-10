@@ -1,5 +1,15 @@
 var movies = [];
 var ind = 0;
+
+const addButton = document.getElementById("add");
+addButton.addEventListener("click", clickAddMovie);
+
+const addSubmit = document.getElementById("submit-form1");
+addSubmit.addEventListener("click", function (e) {
+  e.preventDefault();
+  addMovie();
+});
+
 class Movie {
   constructor(title, director, year, watched) {
     this.title = title;
@@ -29,25 +39,37 @@ class Movie {
   }
 }
 
-// const shamble = new Movie("shamble", "alexandar", "2022", true);
-// calculateIndex(shamble);
-// movies.push(shamble);
+function changeWatched(e) {
+  const changeAtIndex = e.currentTarget.i;
+  const changeNode = e.currentTarget.parentElement;
 
-const target = document.getElementById("");
+  movies[changeAtIndex].changeWatchStatus();
+  removeAllMovies();
+  renderAllMovies();
+}
+
+function removeAllMovies() {
+  const myNode = document.getElementById("main");
+  while (myNode.firstChild) {
+    myNode.removeChild(myNode.lastChild);
+  }
+}
 
 function addMovie() {
   let title = document.getElementById("title").value;
   let director = document.getElementById("director").value;
   let year = document.getElementById("year").value;
   let watched = document.getElementById("watched").checked;
-  let newMovie = new Movie(title, director, year, watched);
-  calculateIndex(newMovie);
-  movies.push(newMovie);
-  ind++;
-  document.getElementById("add-form").classList.add("invis");
-  clearFields();
-  logAllMovies();
-  renderAddedMovie();
+  if (title != "") {
+    let newMovie = new Movie(title, director, year, watched);
+    calculateIndex(newMovie);
+    movies.push(newMovie);
+    ind++;
+    document.getElementById("add-form").classList.add("invis");
+    clearFields();
+    logAllMovies();
+    renderAddedMovie(ind);
+  }
 }
 
 function clearFields() {
@@ -56,12 +78,6 @@ function clearFields() {
   document.getElementById("year").value = "";
   document.getElementById("watched").checked = false;
 }
-
-const addSubmit = document.getElementById("submit-form1");
-addSubmit.addEventListener("click", function (e) {
-  e.preventDefault();
-  addMovie();
-});
 
 function calculateIndex(ob) {
   ob.indexOfMovie = movies.length;
@@ -74,14 +90,9 @@ function logAllMovies() {
   });
 }
 
-const addButton = document.getElementById("add");
-addButton.addEventListener("click", clickAddMovie);
-
 function clickAddMovie() {
   document.getElementById("add-form").classList.remove("invis");
 }
-
-logAllMovies();
 
 function removeMovie(e) {
   const deleteAtIndex = e.currentTarget.i;
@@ -97,7 +108,44 @@ function removeMovie(e) {
   console.log(movies);
 }
 
-function renderAllMovies() {}
+function renderAllMovies() {
+  movies.forEach((element, index) => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+    const titleText = document.createElement("div");
+    titleText.classList.add("title");
+    titleText.innerHTML = element.title;
+    const directorText = document.createElement("div");
+    directorText.classList.add("director");
+    directorText.innerHTML = element.director;
+    const yearText = document.createElement("div");
+    yearText.classList.add("year");
+    yearText.innerHTML = element.year;
+    const wB = document.createElement("button");
+    wB.classList.add("watch-button");
+    wB.innerHTML = "watched?";
+    wB.addEventListener("click", changeWatched);
+    wB.i = index;
+
+    const watchedText = document.createElement("div");
+    watchedText.classList.add("watched");
+    watchedText.innerHTML = element.watched ? "Watched" : "Not Watched";
+    const deleteM = document.createElement("button");
+    deleteM.classList.add("delete");
+    deleteM.addEventListener("click", removeMovie);
+    deleteM.i = index;
+
+    card.appendChild(titleText);
+    card.appendChild(directorText);
+    card.appendChild(yearText);
+    card.appendChild(wB);
+    card.appendChild(watchedText);
+    card.appendChild(deleteM);
+
+    const main = document.getElementById("main");
+    main.appendChild(card);
+  });
+}
 
 function renderAddedMovie() {
   // const d = document.getElementsByClassName("card");
@@ -108,21 +156,32 @@ function renderAddedMovie() {
       const card = document.createElement("div");
       card.classList.add("card");
       const titleText = document.createElement("div");
+      titleText.classList.add("title");
       titleText.innerHTML = element.title;
       const directorText = document.createElement("div");
+      directorText.classList.add("director");
       directorText.innerHTML = element.director;
       const yearText = document.createElement("div");
+      yearText.classList.add("year");
       yearText.innerHTML = element.year;
+      const wB = document.createElement("button");
+      wB.classList.add("watch-button");
+      wB.innerHTML = "watched?";
+      wB.addEventListener("click", changeWatched);
+      wB.i = index;
+
       const watchedText = document.createElement("div");
-      watchedText.innerHTML = element.watched;
+      watchedText.classList.add("watched");
+      watchedText.innerHTML = element.watched ? "Watched" : "Not Watched";
       const deleteM = document.createElement("button");
-      deleteM.innerHTML = "X";
+      deleteM.classList.add("delete");
       deleteM.addEventListener("click", removeMovie);
       deleteM.i = index;
 
       card.appendChild(titleText);
       card.appendChild(directorText);
       card.appendChild(yearText);
+      card.appendChild(wB);
       card.appendChild(watchedText);
       card.appendChild(deleteM);
 
