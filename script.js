@@ -2,7 +2,7 @@ var movies = [];
 var ind = 0;
 
 const addButton = document.getElementById("add");
-addButton.addEventListener("click", clickAddMovie);
+addButton.addEventListener("click", toggleForm);
 
 const addSubmit = document.getElementById("submit-form1");
 addSubmit.addEventListener("click", function (e) {
@@ -44,6 +44,10 @@ class Movie {
       this.watched = false;
     } else this.watched = true;
   }
+}
+
+function toggleForm() {
+  document.getElementById("add-form").classList.toggle("invis");
 }
 
 function changeWatched(e) {
@@ -95,10 +99,6 @@ function logAllMovies() {
     const n = document.createElement("div");
     console.log(e);
   });
-}
-
-function clickAddMovie() {
-  document.getElementById("add-form").classList.remove("invis");
 }
 
 function removeMovie(e) {
